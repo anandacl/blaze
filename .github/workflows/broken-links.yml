@@ -1,0 +1,27 @@
+name: Check documentation links
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  broken-links:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install the Mintlify CLI
+        run: npm i -g mint
+
+      - name: Validate the build
+        run: mint validate
+
+      - name: Check for broken internal links
+        run: mint broken-links

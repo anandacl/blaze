@@ -1,0 +1,30 @@
+---
+title: "Windsurf"
+description: "Set up Windsurf to edit these docs."
+icon: "wind"
+---
+
+[Windsurf](https://windsurf.com) is an agentic editor. Open this repository and its agent
+can create pages and update navigation in one pass.
+
+## Workspace rules
+
+Create `.windsurf/rules/docs.md`:
+
+```markdown .windsurf/rules/docs.md
+---
+trigger: always_on
+---
+
+- Pages are MDX with `title` and `description` frontmatter.
+- Register every new page in `docs.json` under `navigation`.
+- Use Mintlify components: Card, Steps, Accordion, Tabs, CodeGroup, Note, Warning.
+- Reference images with absolute paths from the docs root.
+- Write in second person and the present tense.
+```
+
+## Working with the agent
+
+- Keep `mint dev` running in the terminal so you see each change as it lands
+- Ask for the page and its `docs.json` entry together
+- Have it run `mint broken-links` before you open a pull request

@@ -1,0 +1,118 @@
+---
+title: "Markdown and components"
+description: "Frontmatter, text formatting, and the components available on every page."
+icon: "text-size"
+---
+
+## Frontmatter
+
+Every page opens with a YAML block. `title` and `description` are the minimum; the rest is
+optional.
+
+```mdx
+---
+title: "Page title"
+description: "One sentence shown under the title and in search results."
+icon: "book"
+sidebarTitle: "Shorter title"
+---
+```
+
+| Field | Effect |
+| --- | --- |
+| `title` | Page heading and browser tab title |
+| `description` | Subtitle, search result summary, and social preview text |
+| `icon` | Icon in the sidebar and next to the title |
+| `sidebarTitle` | Overrides `title` in the sidebar when the title is long |
+| `mode` | `wide` hides the table of contents, `center` hides both sidebars |
+| `noindex` | `true` keeps the page out of search engines |
+
+## Text
+
+```mdx
+**Bold**, *italic*, ~~struck through~~, `inline code`, and [a link](/quickstart).
+```
+
+**Bold**, *italic*, ~~struck through~~, `inline code`, and [a link](/quickstart).
+
+Use `##` for the sections of a page — `#` is reserved for the title set in frontmatter.
+Headings up to `###` appear in the table of contents.
+
+## Callouts
+
+<Note>Context a reader benefits from, but can skip.</Note>
+<Tip>A shortcut or better way to do the thing just described.</Tip>
+<Warning>Something that causes data loss or breakage if ignored.</Warning>
+<Info>Neutral background information.</Info>
+<Check>Confirmation that a step worked.</Check>
+
+```mdx
+<Note>Context a reader benefits from, but can skip.</Note>
+<Warning>Something that causes data loss or breakage if ignored.</Warning>
+```
+
+## Cards
+
+<CardGroup cols={2}>
+  <Card title="With a link" icon="link" href="/quickstart">
+    The whole card is clickable.
+  </Card>
+  <Card title="Without a link" icon="square">
+    Plain container for a short block of text.
+  </Card>
+</CardGroup>
+
+```mdx
+<CardGroup cols={2}>
+  <Card title="With a link" icon="link" href="/quickstart">
+    The whole card is clickable.
+  </Card>
+</CardGroup>
+```
+
+## Steps
+
+<Steps>
+  <Step title="First">Numbered instructions a reader follows in order.</Step>
+  <Step title="Second">Each step holds prose, code, or images.</Step>
+</Steps>
+
+## Accordions
+
+<AccordionGroup>
+  <Accordion title="Collapsed by default" icon="chevron-right">
+    Good for troubleshooting entries and optional detail.
+  </Accordion>
+  <Accordion title="Open on load" defaultOpen>
+    Set `defaultOpen` when the content should be visible immediately.
+  </Accordion>
+</AccordionGroup>
+
+## Tabs
+
+<Tabs>
+  <Tab title="macOS">
+    ```bash
+    brew install node
+    ```
+  </Tab>
+  <Tab title="Windows">
+    ```powershell
+    winget install OpenJS.NodeJS
+    ```
+  </Tab>
+</Tabs>
+
+## Tables
+
+| Component | Use it for |
+| --- | --- |
+| `Card` | A link with a title and short description |
+| `Steps` | An ordered procedure |
+| `Accordion` | Detail most readers skip |
+| `Tabs` | The same task on different platforms |
+
+<Tip>
+  The full component list, including `Update`, `Tooltip`, `Icon`, and `Columns`, is in the
+  [Mintlify component reference](https://mintlify.com/docs/components).
+</Tip>

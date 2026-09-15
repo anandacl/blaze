@@ -1,0 +1,81 @@
+---
+title: "Introduction"
+description: "How the API reference in this site is generated."
+icon: "code"
+---
+
+The pages under **Endpoint examples** are generated from
+[`api-reference/openapi.json`](https://github.com/anandacl/blaze/blob/main/api-reference/openapi.json).
+Each page is a few lines of frontmatter; the parameters, schemas, responses, and the
+interactive playground all come from the specification.
+
+## Point the site at your own spec
+
+<Steps>
+  <Step title="Add the file">
+    Drop your OpenAPI 3.0 or 3.1 document in `api-reference/`, or host it and use its URL.
+  </Step>
+  <Step title="Register it in docs.json">
+    ```json
+    {
+      "tab": "API reference",
+      "openapi": "/api-reference/openapi.json",
+      "groups": []
+    }
+    ```
+  </Step>
+  <Step title="Add a page per operation">
+    ```mdx api-reference/endpoint/get.mdx
+    ---
+    title: "List tasks"
+    openapi: "/api-reference/openapi.json GET /tasks"
+    ---
+    ```
+
+    The frontmatter value is the spec path, the method, and the path as written in the
+    spec. For webhooks, use `webhook` in place of the method followed by the key from the
+    `webhooks` object.
+  </Step>
+  <Step title="List the pages in the sidebar">
+    Add each page path to a group under the API reference tab.
+  </Step>
+</Steps>
+
+<Tip>
+  Run `mint validate` to check the config, pages, and specification together before you
+  push. Mintlify can also generate the endpoint pages for you instead of one MDX file per
+  operation — see
+  [auto-generated pages](https://mintlify.com/docs/api-playground/openapi/setup).
+</Tip>
+
+## Authentication
+
+This sample spec declares a bearer scheme, so the playground shows a token field and the
+generated examples include the header:
+
+```bash
+curl https://api.example.com/v1/tasks \
+  -H "Authorization: Bearer $BLAZE_API_KEY"
+```
+
+Authentication is described once in the spec under `components.securitySchemes` and applied
+with the top-level `security` field. It does not need to be repeated on each page.
+
+## Errors
+
+Every error response uses the same shape.
+
+<ResponseField name="code" type="string" required>
+  Machine readable error code, for example `invalid_request`.
+</ResponseField>
+
+<ResponseField name="message" type="string" required>
+  Human readable explanation of what went wrong.
+</ResponseField>
+
+| Status | Meaning |
+| --- | --- |
+| `401` | The API key is missing or invalid |
+| `404` | The resource does not exist |
+| `422` | The request body failed validation |
+| `429` | Rate limit exceeded; retry after the interval in the `Retry-After` header |

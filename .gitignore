@@ -1,0 +1,19 @@
+# Mintlify
+.mintlify/
+.mint/
+mint.log
+
+# Node
+node_modules/
+npm-debug.log*
+yarn-error.log*
+
+# Editors and OS
+.DS_Store
+Thumbs.db
+.idea/
+*.swp
+
+# Local environment
+.env
+.env.local

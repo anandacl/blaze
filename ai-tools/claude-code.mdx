@@ -1,0 +1,39 @@
+---
+title: "Claude Code"
+description: "Work on these docs with Claude Code."
+icon: "terminal"
+---
+
+[Claude Code](https://claude.com/claude-code) is a terminal agent that reads and edits the
+files in this repository directly.
+
+## Setup
+
+<Steps>
+  <Step title="Install">
+    ```bash
+    npm install -g @anthropic-ai/claude-code
+    ```
+  </Step>
+  <Step title="Start it in the docs root">
+    ```bash
+    cd blaze
+    claude
+    ```
+  </Step>
+  <Step title="Add project context">
+    Run `/init` to generate a `CLAUDE.md`, then note the conventions this site follows:
+    pages are MDX, navigation lives in `docs.json`, and assets go in `images/`.
+  </Step>
+</Steps>
+
+## Useful prompts
+
+- "Add a page at `essentials/style-guide.mdx` and list it in the Writing content group of `docs.json`."
+- "Every page in `essentials/` should have an `icon` in its frontmatter. Add the missing ones."
+- "Run `mint broken-links` and fix what it reports."
+
+<Tip>
+  Ask for the `docs.json` edit in the same request as the new page. A page that is not
+  listed in `navigation` never shows up in the sidebar.
+</Tip>

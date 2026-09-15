@@ -1,0 +1,50 @@
+---
+title: "Introduction"
+description: "Welcome to the Blaze documentation."
+icon: "house"
+---
+
+<Frame>
+  <img className="block dark:hidden" src="/images/hero-light.svg" alt="Blaze documentation" />
+  <img className="hidden dark:block" src="/images/hero-dark.svg" alt="Blaze documentation" />
+</Frame>
+
+## Welcome
+
+This site is built with [Mintlify](https://mintlify.com). Every page is an MDX file in
+this repository, the sidebar comes from `docs.json`, and merging to `main` publishes the
+site.
+
+Start with the quickstart to get the site running on your machine, then use the writing
+guides as a reference while you add pages.
+
+<CardGroup cols={2}>
+  <Card title="Quickstart" icon="rocket" href="/quickstart">
+    Preview the docs locally and publish your first change.
+  </Card>
+  <Card title="Local development" icon="terminal" href="/development">
+    Install the CLI, run a preview server, and catch broken links.
+  </Card>
+  <Card title="Write content" icon="pen-to-square" href="/essentials/markdown">
+    Frontmatter, callouts, cards, and the rest of the component set.
+  </Card>
+  <Card title="API reference" icon="code" href="/api-reference/introduction">
+    Generate endpoint pages from an OpenAPI specification.
+  </Card>
+</CardGroup>
+
+## How this repository is organized
+
+| Path | What lives here |
+| --- | --- |
+| `docs.json` | Site config: theme, colors, navigation, navbar, footer |
+| `*.mdx` | Pages. The file path is the URL path |
+| `essentials/` | Guides for writing and formatting content |
+| `api-reference/` | OpenAPI spec and the endpoint pages generated from it |
+| `snippets/` | Reusable MDX imported into other pages |
+| `images/`, `logo/` | Static assets referenced with absolute paths |
+
+<Note>
+  A page only appears in the sidebar once its path is listed in the `navigation` block of
+  `docs.json`. Pages that exist but are not listed are still reachable by URL.
+</Note>

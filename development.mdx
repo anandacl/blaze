@@ -1,0 +1,87 @@
+---
+title: "Local development"
+description: "Install the CLI, preview changes, and check the site before you push."
+icon: "terminal"
+---
+
+## Requirements
+
+- Node.js 20 or later
+- A local clone of this repository
+
+## Install
+
+```bash
+npm i -g mint
+```
+
+Update the CLI when a build behaves differently locally than in production:
+
+```bash
+mint update
+```
+
+## Common commands
+
+<CodeGroup>
+
+```bash Preview
+mint dev
+```
+
+```bash Preview on another port
+mint dev --port 3333
+```
+
+```bash Check links
+mint broken-links
+```
+
+```bash Validate the build
+mint validate
+```
+
+```bash Update the CLI
+mint update
+```
+
+</CodeGroup>
+
+Run every command from the directory that contains `docs.json`.
+
+## Before you push
+
+<Steps>
+  <Step title="Render the pages you touched">
+    Visit each changed page in the local preview. MDX fails loudly: an unclosed component
+    breaks the page it is on.
+  </Step>
+  <Step title="Check links and validate">
+    `mint broken-links` reports internal links pointing at pages that do not exist, and
+    `mint validate` checks that `docs.json`, every page, and the OpenAPI spec build.
+  </Step>
+  <Step title="Confirm the sidebar">
+    A new page shows up only after its path is added to `navigation` in `docs.json`.
+  </Step>
+</Steps>
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="mint dev is not found after install" icon="triangle-exclamation">
+    The global npm bin directory is not on your `PATH`. Check it with `npm bin -g` and add
+    that directory to `PATH`, or run the CLI through `npx mint dev`.
+  </Accordion>
+  <Accordion title="The preview shows a 404 for every page" icon="circle-question">
+    `mint dev` was started outside the docs root. Change to the directory holding
+    `docs.json` and start it again.
+  </Accordion>
+  <Accordion title="A page renders locally but not in production" icon="rotate">
+    The deployed build uses the latest CLI behaviour. Run `mint update`, reproduce locally,
+    then fix and push.
+  </Accordion>
+  <Accordion title="Sharp or platform install errors on Windows" icon="windows">
+    Remove the global package and reinstall with a clean cache:
+    `npm uninstall -g mint && npm cache clean --force && npm i -g mint`.
+  </Accordion>
+</AccordionGroup>

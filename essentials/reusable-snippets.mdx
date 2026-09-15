@@ -1,0 +1,68 @@
+---
+title: "Reusable snippets"
+description: "Write content once in snippets/ and import it into any page."
+icon: "recycle"
+---
+
+Anything repeated across pages — an install command, a prerequisites list, a version
+number — belongs in `snippets/`. Files there are not published as pages; they are only
+rendered where they are imported.
+
+## Text
+
+Create the snippet:
+
+```mdx snippets/snippet-intro.mdx
+Edit this snippet in `snippets/snippet-intro.mdx` and every page that imports it updates.
+```
+
+Import and use it:
+
+```mdx
+import SnippetIntro from "/snippets/snippet-intro.mdx";
+
+<SnippetIntro />
+```
+
+Rendered:
+
+import SnippetIntro from "/snippets/snippet-intro.mdx";
+
+<SnippetIntro />
+
+## Variables
+
+Export a value from a snippet and import it into a sentence.
+
+```mdx snippets/version.mdx
+export const version = "1.2.0";
+```
+
+```mdx
+import { version } from "/snippets/version.mdx";
+
+The current release is {version}.
+```
+
+## Components with props
+
+A snippet can export a component that takes arguments.
+
+```mdx snippets/install.mdx
+export const Install = ({ pkg }) => (
+  <pre>
+    <code>npm install {pkg}</code>
+  </pre>
+);
+```
+
+```mdx
+import { Install } from "/snippets/install.mdx";
+
+<Install pkg="blaze-sdk" />
+```
+
+<Note>
+  Import paths are absolute from the docs root and start with `/snippets/`. Put every import
+  directly below the frontmatter so the page is easy to scan.
+</Note>

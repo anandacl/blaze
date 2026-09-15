@@ -1,0 +1,103 @@
+---
+title: "Navigation"
+description: "How the sidebar, tabs, and anchors are assembled in docs.json."
+icon: "sitemap"
+---
+
+Navigation is defined entirely in `docs.json`. A page exists at its file path, but it only
+appears in the sidebar once it is listed here.
+
+## Groups
+
+A group is a labelled section of the sidebar. Page entries are file paths without the
+`.mdx` extension.
+
+```json
+{
+  "navigation": {
+    "groups": [
+      {
+        "group": "Get started",
+        "pages": ["index", "quickstart", "development"]
+      }
+    ]
+  }
+}
+```
+
+## Tabs
+
+Tabs sit above the sidebar and each one owns its own groups. This site uses two:
+**Documentation** and **API reference**.
+
+```json
+{
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "Documentation",
+        "groups": [{ "group": "Get started", "pages": ["index"] }]
+      },
+      {
+        "tab": "API reference",
+        "openapi": "/api-reference/openapi.json",
+        "groups": [{ "group": "Endpoints", "pages": ["api-reference/endpoint/get"] }]
+      }
+    ]
+  }
+}
+```
+
+## Nested pages
+
+Nest a group inside a group's `pages` array to create an expandable subsection.
+
+```json
+{
+  "group": "Writing content",
+  "pages": [
+    "essentials/markdown",
+    {
+      "group": "Advanced",
+      "pages": ["essentials/reusable-snippets"]
+    }
+  ]
+}
+```
+
+## Global anchors
+
+Anchors show on every tab. They are the right place for links that leave the docs.
+
+```json
+{
+  "navigation": {
+    "global": {
+      "anchors": [
+        { "anchor": "GitHub", "href": "https://github.com/anandacl/blaze", "icon": "github" }
+      ]
+    }
+  }
+}
+```
+
+## Versions and languages
+
+Wrap the navigation in `versions` or `languages` when you need more than one copy of the
+site. Each entry holds its own tabs and groups.
+
+```json
+{
+  "navigation": {
+    "versions": [
+      { "version": "v2", "tabs": [] },
+      { "version": "v1", "tabs": [] }
+    ]
+  }
+}
+```
+
+<Warning>
+  `docs.json` must stay valid JSON — no comments, no trailing commas. An invalid file fails
+  the build, and `mint dev` reports the line to fix.
+</Warning>

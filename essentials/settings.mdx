@@ -1,0 +1,88 @@
+---
+title: "Site settings"
+description: "The docs.json fields that control branding, theme, and site-wide behaviour."
+icon: "gear"
+---
+
+`docs.json` is the single configuration file for the site. The `$schema` entry on the first
+line gives editors autocomplete and inline validation.
+
+## Required fields
+
+```json
+{
+  "$schema": "https://mintlify.com/docs.json",
+  "theme": "mint",
+  "name": "Blaze",
+  "colors": { "primary": "#EA580C" },
+  "navigation": { "tabs": [] }
+}
+```
+
+| Field | Purpose |
+| --- | --- |
+| `theme` | Layout preset: `mint`, `maple`, `palm`, `willow`, `linden`, `almond`, `aspen` |
+| `name` | Product name in the navbar and page titles |
+| `colors.primary` | Links, buttons, and accents in light mode |
+| `colors.light` | Accent used in dark mode |
+| `colors.dark` | Accent used for hover and pressed states |
+
+## Branding
+
+```json
+{
+  "favicon": "/favicon.svg",
+  "logo": {
+    "light": "/logo/light.svg",
+    "dark": "/logo/dark.svg",
+    "href": "https://github.com/anandacl/blaze"
+  }
+}
+```
+
+`logo.light` is displayed on light backgrounds, `logo.dark` on dark backgrounds — name them
+after the theme they appear in, not the ink colour.
+
+## Navbar and footer
+
+```json
+{
+  "navbar": {
+    "links": [{ "label": "Support", "href": "mailto:support@example.com" }],
+    "primary": { "type": "button", "label": "Get started", "href": "https://example.com" }
+  },
+  "footer": {
+    "socials": { "github": "https://github.com/anandacl/blaze" }
+  }
+}
+```
+
+`navbar.primary` takes `"type": "button"` with a label and href, or `"type": "github"` with
+just an href to render a star count.
+
+## AI and search
+
+```json
+{
+  "contextual": { "options": ["copy", "view", "chatgpt", "claude"] },
+  "search": { "prompt": "Search Blaze docs" }
+}
+```
+
+`contextual.options` adds the per-page menu that lets readers copy a page as Markdown or
+open it in an assistant.
+
+## Redirects
+
+Keep old URLs working when a page moves.
+
+```json
+{
+  "redirects": [{ "source": "/old-path", "destination": "/quickstart" }]
+}
+```
+
+<Tip>
+  The full field reference is in the
+  [Mintlify settings documentation](https://mintlify.com/docs/settings).
+</Tip>

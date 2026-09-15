@@ -1,0 +1,71 @@
+---
+title: "Images and embeds"
+description: "Add screenshots, diagrams, and video to a page."
+icon: "image"
+---
+
+## Where files go
+
+Put assets in `images/` and reference them with an absolute path from the docs root. A
+relative path breaks once the page moves.
+
+```mdx
+![A task list in the Blaze dashboard](/images/hero-light.svg)
+```
+
+## Frames
+
+`Frame` adds a border and lets you caption the image. Use it for screenshots.
+
+<Frame caption="The hero illustration shipped with this template.">
+  <img src="/images/hero-light.svg" alt="Blaze documentation" />
+</Frame>
+
+```mdx
+<Frame caption="The hero illustration shipped with this template.">
+  <img src="/images/hero-light.svg" alt="Blaze documentation" />
+</Frame>
+```
+
+## Light and dark variants
+
+Swap images per theme with Tailwind's `dark:` classes. Export both files at the same size.
+
+```mdx
+<img className="block dark:hidden" src="/images/hero-light.svg" alt="Blaze" />
+<img className="hidden dark:block" src="/images/hero-dark.svg" alt="Blaze" />
+```
+
+## Sizing
+
+Pass HTML attributes to control the rendered size.
+
+```mdx
+<img src="/images/hero-light.svg" alt="Blaze" width="400" />
+```
+
+## Video
+
+Use a standard `iframe` for hosted video.
+
+```mdx
+<iframe
+  width="100%"
+  height="400"
+  src="https://www.youtube.com/embed/VIDEO_ID"
+  title="Video title"
+  frameBorder="0"
+  allowFullScreen
+/>
+```
+
+<Note>
+  In MDX, attributes are camelCase and every tag must be closed — `frameBorder`, not
+  `frameborder`, and `<img ... />`, not `<img>`.
+</Note>
+
+## Checklist
+
+- Write alt text that describes what the image shows, not "screenshot"
+- Keep screenshots under about 1 MB; compress before committing
+- Prefer SVG for diagrams and logos so they stay sharp at any zoom

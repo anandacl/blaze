@@ -1,0 +1,31 @@
+---
+title: "Cursor"
+description: "Set up Cursor to edit these docs."
+icon: "code"
+---
+
+[Cursor](https://cursor.com) is an AI code editor. Open this repository as a folder and it
+has the same file access you do.
+
+## Project rules
+
+Create `.cursor/rules/docs.mdc` so suggestions match this site's conventions:
+
+```markdown .cursor/rules/docs.mdc
+---
+description: Conventions for the Blaze documentation site
+alwaysApply: true
+---
+
+- Pages are MDX with `title` and `description` frontmatter.
+- Register every new page in `docs.json` under `navigation`.
+- Use Mintlify components: Card, Steps, Accordion, Tabs, CodeGroup, Note, Warning.
+- Reference images with absolute paths from the docs root, for example `/images/hero-light.svg`.
+- Write in second person and the present tense.
+```
+
+## Working in the editor
+
+- `Cmd/Ctrl + K` rewrites a selection in place — good for tightening a paragraph
+- `Cmd/Ctrl + L` opens chat with the current file as context
+- Reference a file in a prompt with `@docs.json` so the model reads the real navigation

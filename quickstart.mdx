@@ -1,0 +1,69 @@
+---
+title: "Quickstart"
+description: "Get the docs running locally and ship your first change."
+icon: "rocket"
+---
+
+## Preview the site locally
+
+<Steps>
+  <Step title="Install the CLI">
+    The Mintlify CLI needs Node.js 20 or later.
+
+    ```bash
+    npm i -g mint
+    ```
+  </Step>
+  <Step title="Start the preview server">
+    Run this from the repository root, the directory that contains `docs.json`.
+
+    ```bash
+    mint dev
+    ```
+
+    The site is served at `http://localhost:3000` and reloads as you save files.
+  </Step>
+  <Step title="Edit a page">
+    Open `index.mdx`, change a heading, and save. The browser updates without a restart.
+  </Step>
+</Steps>
+
+## Publish a change
+
+<Steps>
+  <Step title="Connect the repository">
+    Install the Mintlify GitHub App on this repository from the
+    [dashboard](https://dashboard.mintlify.com/settings/organization/github-app). It needs
+    read access to the branch you deploy from.
+  </Step>
+  <Step title="Open a pull request">
+    Push a branch and open a PR. Mintlify builds a preview deployment and comments the link
+    on the PR.
+  </Step>
+  <Step title="Merge">
+    Merging to `main` deploys to production. Builds usually finish in under a minute.
+  </Step>
+</Steps>
+
+## Make it yours
+
+<AccordionGroup>
+  <Accordion title="Name, colors, and logo" icon="palette">
+    `name`, `colors`, and `logo` in `docs.json` control the branding. Replace
+    `logo/light.svg` and `logo/dark.svg` with your own marks — the light file is shown on
+    light backgrounds, the dark file on dark ones.
+  </Accordion>
+  <Accordion title="Navigation" icon="sitemap">
+    Add the page path, without the `.mdx` extension, to a group under
+    `navigation.tabs` in `docs.json`. See [Navigation](/essentials/navigation).
+  </Accordion>
+  <Accordion title="Custom domain" icon="globe">
+    Point a `CNAME` record at Mintlify and add the domain under **Settings → Domain** in
+    the dashboard.
+  </Accordion>
+</AccordionGroup>
+
+<Check>
+  Once `mint dev` renders your edit and the PR preview looks right, the same output is what
+  production gets.
+</Check>
