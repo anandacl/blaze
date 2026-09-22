@@ -17,9 +17,9 @@ look like:
 Note that --- not considering the asterisk --- the actual text
 content starts at 4-columns in.
 
-- new this one.
-- new that one - changed
-- new the other one Gone the other one Done
+* new this one.
+* new that one - changed
+* new the other one Gone the other one Done
 
 > Block quotes are
 > written like so.
