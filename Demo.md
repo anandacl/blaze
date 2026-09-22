@@ -5,8 +5,17 @@ description: "Connect your identity provider to Document360 and map users to rea
 
 # An h1 header Change from Git Anand changed
 
+<Tabs>
+  <Tab title="Tab 1">
+    Changed
+  </Tab>
+  <Tab title="Tab 2">
+    Tab2
+  </Tab>
+</Tabs>
+
 Paragraphs are separated by a blank line.
- 
+
 2nd paragraph. *Italic*, **bold**, and `monospace`. Itemized lists
 look like:
  
