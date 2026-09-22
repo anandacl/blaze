@@ -1,5 +1,5 @@
 ---
-title: "Configure single sign-on"
+title: "Demo"
 description: "Connect your identity provider to Document360 and map users to reader groups."
 ---
  
