@@ -31,6 +31,8 @@
             "group": "Writing content",
             "pages": [
               "essentials/markdown",
+              "MarkdownSyntax",
+              "CommonMarkRepresentations",
               "essentials/code",
               "essentials/images",
               "essentials/navigation",
