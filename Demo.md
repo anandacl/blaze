@@ -12,7 +12,7 @@ look like:
  
   * this one.
   * that one - changed
-  * the other one
+  * the other one Done
  
 Note that --- not considering the asterisk --- the actual text
 content starts at 4-columns in.
