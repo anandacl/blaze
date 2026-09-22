@@ -12,11 +12,15 @@ look like:
  
   * this one.
   * that one - changed
-  * the other one Done
+  * the other one Gone the other one Done
  
 Note that --- not considering the asterisk --- the actual text
 content starts at 4-columns in.
- 
+
+- new this one.
+- new that one - changed
+- new the other one Gone the other one Done
+
 > Block quotes are
 > written like so.
 >
