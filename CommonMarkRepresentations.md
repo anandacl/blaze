@@ -679,7 +679,7 @@ identical.
 
 [shortcut]
 
-<https://example.com>
+[https://example.com](https://example.com)
 
 [label]: https://example.com
 [collapsed]: https://example.com
@@ -954,7 +954,9 @@ Inline: <em>emphasis</em> and <a href="/x">a link</a>.
 *Markdown is not parsed inside an HTML block.*
 </div>
 
-<!-- a comment block -->
+The comment block from the source above is deliberately absent here. This page is
+rendered by MDX, which has no HTML comment syntax, so `<!-- ... -->` is a build
+error rather than an invisible node. See [Comments](#comments--the-two-idioms).
 
 Condition 7 cannot interrupt a paragraph.
 
@@ -976,15 +978,17 @@ CommonMark has no comment syntax. Two constructs are conventionally used instead
 
 **Renders as**
 
-<!-- An HTML comment. Present in the HTML output but invisible on screen. -->
+Nothing visible — which is the whole point of both idioms, so there is no live
+example to show here.
 
-[//]: # (A link reference definition nobody references. Absent from the output.)
+The two are not equivalent underneath, though. Under a CommonMark renderer the HTML
+comment survives into the output, where a reader can still find it via view-source;
+the link-reference forms disappear from the output entirely, which is why tooling
+pipelines use them to smuggle directives past a renderer.
 
-[comment]: <> (Same trick with an empty angle destination.)
-
-Neither appears on screen. The HTML comment survives into the output where a reader
-can view-source it; the definition form disappears entirely, which is why tooling
-pipelines use it to smuggle directives.
+This page cannot demonstrate the first form live: it is rendered by MDX, which has no
+HTML comment syntax, so `<!-- ... -->` raises a build error instead of producing an
+invisible node.
 
 ---
 
