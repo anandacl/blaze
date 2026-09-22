@@ -16,6 +16,9 @@ description: "Connect your identity provider to Document360 and map users to rea
 
 Paragraphs are separated by a blank line. Changed
 
+- Star
+- Star
+
 2nd paragraph. *Italic*, **bold**, and `monospace`. Itemized lists
 look like:
  
@@ -30,9 +33,8 @@ look like:
 Note that --- not considering the asterisk --- the actual text
 content starts at 4-columns in.
 
-* new this one. GIT
-* new that one - changed
-* new the other one Gone the other one Done
+* test Star
+* test Star
 
 > Block quotes are
 > written like so.
