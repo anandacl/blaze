@@ -11,7 +11,7 @@ Paragraphs are separated by a blank line.
 look like:
  
   * this one.
-  * that one
+  * that one - changed
   * the other one
  
 Note that --- not considering the asterisk --- the actual text
