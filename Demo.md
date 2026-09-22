@@ -14,9 +14,9 @@ look like:
   * that one - changed
   * the other one Gone the other one Done
 
-1. test
-2. test 2
-3. test 3
+1) test - changed
+2) test 2 - second
+3) test 3
 
 Note that --- not considering the asterisk --- the actual text
 content starts at 4-columns in.
