@@ -15,63 +15,53 @@
     "href": "https://github.com/anandacl/blaze"
   },
   "navigation": {
-    "tabs": [
+    "groups": [
       {
-        "tab": "Documentation",
-        "groups": [
-          {
-            "group": "Get started",
-            "pages": [
-              "index",
-              "quickstart",
-              "development"
-            ]
-          },
-          {
-            "group": "Writing content",
-            "pages": [
-              "essentials/markdown",
-              "MarkdownSyntax",
-              "CommonMarkRepresentations",
-              "Jones",
-              "Demo",
-              "essentials/code",
-              "essentials/images",
-              "essentials/navigation",
-              "essentials/settings",
-              "essentials/reusable-snippets"
-            ]
-          },
-          {
-            "group": "AI tools",
-            "pages": [
-              "ai-tools/claude-code",
-              "ai-tools/cursor",
-              "ai-tools/windsurf"
-            ]
-          }
+        "group": "Get started",
+        "pages": [
+          "index",
+          "quickstart",
+          "development"
         ]
       },
       {
-        "tab": "API reference",
-        "openapi": "/api-reference/openapi.json",
-        "groups": [
-          {
-            "group": "API documentation",
-            "pages": [
-              "api-reference/introduction"
-            ]
-          },
-          {
-            "group": "Endpoint examples",
-            "pages": [
-              "api-reference/endpoint/get",
-              "api-reference/endpoint/create",
-              "api-reference/endpoint/delete",
-              "api-reference/endpoint/webhook"
-            ]
-          }
+        "group": "Writing content",
+        "pages": [
+          "essentials/markdown",
+          "MarkdownSyntax",
+          "CommonMarkRepresentations",
+          "Jones",
+          "Demo",
+          "essentials/code",
+          "essentials/images",
+          "essentials/navigation",
+          "essentials/settings",
+          "essentials/reusable-snippets"
         ]
+      },
+      {
+        "group": "AI tools",
+        "pages": [
+          "ai-tools/claude-code",
+          "ai-tools/cursor",
+          "ai-tools/windsurf"
+        ]
+      },
+      {
+        "group": "API documentation",
+        "pages": [
+          "api-reference/introduction"
+        ]
+      },
+      {
+        "group": "Endpoint examples",
+        "pages": [
+          "api-reference/endpoint/get",
+          "api-reference/endpoint/create",
+          "api-reference/endpoint/delete",
+          "api-reference/endpoint/webhook"
+        ],
+        "openapi": "/api-reference/openapi.json"
       }
     ],
     "global": {
