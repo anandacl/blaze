@@ -62,6 +62,15 @@
           "api-reference/endpoint/webhook"
         ],
         "openapi": "/api-reference/openapi.json"
+      },
+      {
+        "group": "Orders",
+        "openapi": "/api-reference/orders-openapi.json",
+        "pages": [
+          "api-reference/orders/list",
+          "api-reference/orders/get",
+          "api-reference/orders/create"
+        ]
       }
     ],
     "global": {
