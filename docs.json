@@ -15,64 +15,6 @@
     "href": "https://github.com/anandacl/blaze"
   },
   "navigation": {
-    "groups": [
-      {
-        "group": "Get started",
-        "pages": [
-          "index",
-          "quickstart",
-          "development"
-        ]
-      },
-      {
-        "group": "Writing content",
-        "pages": [
-          "essentials/markdown",
-          "MarkdownSyntax",
-          "CommonMarkRepresentations",
-          "Jones",
-          "Demo",
-          "essentials/code",
-          "essentials/images",
-          "essentials/navigation",
-          "essentials/settings",
-          "essentials/reusable-snippets"
-        ]
-      },
-      {
-        "group": "AI tools",
-        "pages": [
-          "ai-tools/claude-code",
-          "ai-tools/cursor",
-          "ai-tools/windsurf"
-        ]
-      },
-      {
-        "group": "API documentation",
-        "pages": [
-          "api-reference/introduction"
-        ]
-      },
-      {
-        "group": "Endpoint examples",
-        "pages": [
-          "api-reference/endpoint/get",
-          "api-reference/endpoint/create",
-          "api-reference/endpoint/delete",
-          "api-reference/endpoint/webhook"
-        ],
-        "openapi": "/api-reference/openapi.json"
-      },
-      {
-        "group": "Orders",
-        "openapi": "/api-reference/orders-openapi.json",
-        "pages": [
-          "api-reference/orders/list",
-          "api-reference/orders/get",
-          "api-reference/orders/create"
-        ]
-      }
-    ],
     "global": {
       "anchors": [
         {
@@ -91,7 +33,75 @@
           "icon": "github"
         }
       ]
-    }
+    },
+    "tabs": [
+      {
+        "tab": "First",
+        "pages": [
+          {
+            "group": "Endpoint examples",
+            "openapi": "api-reference/openapi.json",
+            "pages": [
+              "api-reference/endpoint/get",
+              "api-reference/endpoint/create",
+              "api-reference/endpoint/delete"
+            ]
+          },
+          {
+            "group": "Orders",
+            "openapi": "api-reference/orders-openapi.json",
+            "pages": [
+              "api-reference/orders/list",
+              "api-reference/orders/get",
+              "api-reference/orders/create"
+            ]
+          },
+          "api-reference/endpoint/webhook",
+          {
+            "group": "AI tools",
+            "pages": [
+              "ai-tools/claude-code",
+              "ai-tools/cursor",
+              "ai-tools/windsurf"
+            ]
+          },
+          {
+            "group": "Writing content",
+            "pages": [
+              "essentials/markdown",
+              "MarkdownSyntax",
+              "CommonMarkRepresentations",
+              "Jones",
+              "Demo",
+              "essentials/code",
+              "essentials/images",
+              "essentials/navigation",
+              "essentials/settings",
+              "essentials/reusable-snippets"
+            ]
+          },
+          {
+            "group": "Get started",
+            "pages": [
+              "index",
+              "quickstart",
+              "development"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "API Reference",
+        "groups": [
+          {
+            "group": "API documentation",
+            "pages": [
+              "api-reference/introduction"
+            ]
+          }
+        ]
+      }
+    ]
   },
   "navbar": {
     "links": [
