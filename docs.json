@@ -87,7 +87,8 @@
               "quickstart",
               "development"
             ]
-          }
+          },
+          "link-test"
         ]
       },
       {
